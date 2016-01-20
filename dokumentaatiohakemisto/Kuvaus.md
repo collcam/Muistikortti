@@ -8,23 +8,26 @@ Tarkoituksena on että opiskelija voi tallentaa haluamiaan sanapareja Muistikort
 Opiskelijan on mahdollista tehdä myös sanaselityksä sanoille esim. "Jean Sibelius", "Suomalainen kansallisromanttinen säveltäjä." Mutta näistä ei oteta testiä. Tarkoitus on että opiskelija omassa mielessään yrittää muistaa mahdollisimman paljon sanaselityksestä, ja katsoo sitten kuinka paljon hän muisti.
 
 
-**Käyttäjät:**
+**Käyttäjät**
+
 Opiskelija
 
 
-**Kaikkien käyttäjien toiminnot:**
-1.Sanaparien lisäys
-	*Onnistuu mikäli kyseistä muistikorttia ei valmiiksi jo ole.
-2.Sanaparien poisto
-	*Onnistuu mikäli kortti on olemassa.
-3.Korttien arpominen ja testaus
-4.Kaikkien korttien selaus
+**Kaikkien käyttäjien toiminnot**
+
+1. Sanaparien lisäys
+	* Onnistuu mikäli kyseistä muistikorttia ei valmiiksi jo ole.
+2. Sanaparien poisto
+	* Onnistuu mikäli kortti on olemassa.
+3. Korttien arpominen ja testaus
+4. Kaikkien korttien selaus
 
 
-**Opiskelijan toiminnot:**
-1.Sanaparien lisäys
-	*Onnistuu mikäli kyseistä muistikorttia ei valmiiksi jo ole.
-2.Sanaparien poisto
-	*Onnistuu mikäli kortti on olemassa.
-3.Korttien arpominen ja testaus
-4.Kaikkien korttien selaus
+**Opiskelijan toiminnot**
+
+1. Sanaparien lisäys
+	* Onnistuu mikäli kyseistä muistikorttia ei valmiiksi jo ole.
+2. Sanaparien poisto
+	* Onnistuu mikäli kortti on olemassa.
+3. Korttien arpominen ja testaus
+4. Kaikkien korttien selaus
