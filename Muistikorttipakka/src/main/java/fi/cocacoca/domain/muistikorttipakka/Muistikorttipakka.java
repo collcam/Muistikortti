@@ -37,38 +37,39 @@ public class Muistikorttipakka {
         
     }
 
-    public void tallennaPakka(String tiedostonNimi) {
-        kysymysTiedosto = new File(tiedostonNimi);
-        vastausTiedosto = new File(tiedostonNimi + "Vastaus");
+    public void tallennaPakka() {
+        kysymysTiedosto = new File("MuistikorttipakkaKysysmys");
+        vastausTiedosto = new File("MuistikorttipakkaVastaus");
         assert kysymysTiedosto.canWrite();
         assert vastausTiedosto.canWrite();
         try  {
             BufferedWriter output = new BufferedWriter(new FileWriter(kysymysTiedosto));
-            for (int i = 0; i < korttipakka.size(); i++) {
-                output.write(korttipakka.get(i).getKysymys());
-            }
+            for (Muistikortti korttipakka1 : korttipakka) {
+                output.write(korttipakka1.getKysymys()+"\n");
+            } output.close();
             BufferedWriter output2 = new BufferedWriter(new FileWriter(vastausTiedosto));
-            for(int a= 0;a< korttipakka.size();a++) {
-                output2.write(korttipakka.get(a).getVastaus());
+            for (Muistikortti korttipakka1 : korttipakka) {
+                output2.write(korttipakka1.getVastaus()+"\n");
             }
+           
+            output2.close();
         } catch (IOException kirjoitusOngelma){
                 System.out.println("Kirjoittaminen ei onnistunut");
                 }
       
-    } public void lisaaKortti(String kysymys, String vastaus) {
+    } public void lisaaKortti(Muistikortti kortti) {
        
-            kortti.setKysymys(kysymys);
-      
-            kortti.setVastaus(vastaus);
+            
         
         korttipakka.add(kortti);
         System.out.println("Kortti lisätty");
     }
 
-    public void tulostapakka() {
-        for (Muistikortti k : korttipakka) {
-            System.out.println(k);
-        }
+    public ArrayList tulostapakka() {
+        return korttipakka;
+       // for (Muistikortti k : korttipakka) {
+        //    System.out.println(k);
+        //}
     }
 
     public void poistaKortti(Muistikortti kortti) {

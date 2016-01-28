@@ -14,12 +14,12 @@ public class Muistikortti {
     public String kysymys;
     public String vastaus;
     public Muistikortti(){
-        
+    kysymys="";
+    vastaus="";
     }
     public Muistikortti(String kysymys, String vastaus){
-        
-        setKysymys(kysymys);
-        setVastaus(vastaus);
+        this.kysymys=kysymys;
+        this.vastaus=vastaus;
     }public void setKysymys(String k){
        this.kysymys=k; 
     }public void setVastaus(String v){

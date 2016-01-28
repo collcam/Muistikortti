@@ -5,12 +5,13 @@
  */
 package fi.cocacoca.domain.muistikorttipakka;
 
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -23,40 +24,50 @@ public class MuistikorttipakkaTest {
 
     @Before
     public void setUp() {
-        Muistikortti kortti= new Muistikortti("ekaKysymys","ekaVastaus");
-        Muistikorttipakka pakka = new Muistikorttipakka(kortti);
-      
-        
-    }@Test
-    public void konstruktoriAsettaaKortin(){
-     assertEquals(pakka.korttienLkm(),1);
-     
+        kortti = new Muistikortti("ekaKysymys", "ekaVastaus");
+        pakka = new Muistikorttipakka(kortti);
+
     }
 
     @Test
-    public void testLisaaKortti() {
-        pakka.lisaaKortti("kysymys", "vastaus");
-        assertEquals(pakka.korttienLkm(),2);
-        
-        
+    public void konstruktoriAsettaaKortin() {
+        assertEquals(pakka.korttienLkm(), 1);
+
     }
 
-    /**
-     * Test of tulostapakka method, of class Muistikorttipakka.
-     */
     @Test
-    public void testTulostapakka() {
-       
+    public void lisaakoKortinOikein() {
+        Muistikortti kokeiluKortti = new Muistikortti("toimiiko", "lisäys");
+        pakka.lisaaKortti(kokeiluKortti);
+        assertEquals(pakka.korttienLkm(), 2);
+
     }
 
-    /**
-     * Test of poistaKortti method, of class Muistikorttipakka.
-     */
     @Test
-    public void testPoistaKortti() {
-       
+    public void onnistuukoKortinPoisto() {
         pakka.poistaKortti(kortti);
-      assertEquals(pakka.etsiKortti(kortti),"ei löydy");
+        assertEquals(pakka.korttienLkm(), 0);
+    }
+
+    @Test
+    public void onnistuukoKortinEtsinta() {
+        Muistikortti kokeiluKortti = new Muistikortti("toimiiko", "etsintä");
+        pakka.lisaaKortti(kokeiluKortti);
+        assertEquals(pakka.etsiKortti(kokeiluKortti), "löytyi");
+
+    }
+
+    @Test
+    public void onnistuukoOlemattomanKortinEtsinta() {
+        Muistikortti kokeiluKortti = new Muistikortti("toimiiko", "etsintä");
+        assertEquals(pakka.etsiKortti(kokeiluKortti), "ei löydy");
+    }
+
+    @Test
+    public void tulostetaankoPakkaOikein() {
+        ArrayList<Muistikortti> kokeiluLista = new ArrayList<>();
+        kokeiluLista.add(kortti);
+        assertEquals(pakka.tulostapakka(), kokeiluLista);
     }
 
 }

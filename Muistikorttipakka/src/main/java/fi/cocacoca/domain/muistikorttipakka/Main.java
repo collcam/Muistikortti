@@ -13,8 +13,15 @@ package fi.cocacoca.domain.muistikorttipakka;
 public class Main {
     public static void main(String[]args){
         Muistikorttipakka m=new Muistikorttipakka();
+        Muistikortti k=new Muistikortti("k","v");
+         Muistikortti kokeiluKortti =new Muistikortti("toimiiko","etsintä"); 
         System.out.println(m);
-       // m.lisaaKortti();
-        m.tulostapakka();
+        m.lisaaKortti(k);
+        m.lisaaKortti(kokeiluKortti);
+      m.tallennaPakka();
+      SelaaMuistikorttipakka s=new SelaaMuistikorttipakka();
+      System.out.println(s.lueMuistikorttipakkaTiedosto("MuistikorttipakkaKysymys", "MuistikorttipakkaVastaus"));
+      
+      
     }
 }
