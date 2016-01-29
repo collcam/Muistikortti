@@ -3,5 +3,6 @@
 
 ##Dokumentaakio
 
-[aiheen kuvaus](Muistikortti/dokumentaatio.md)
+[aiheen kuvaus](dokumentaatiohakemisto/Kuvaus.md)
+
 
