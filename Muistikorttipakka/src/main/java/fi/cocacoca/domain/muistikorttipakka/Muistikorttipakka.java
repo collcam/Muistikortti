@@ -37,7 +37,7 @@ public class Muistikorttipakka {
         
     }
 
-    public void tallennaPakka() {
+    public boolean tallennaPakka() {
         kysymysTiedosto = new File("MuistikorttipakkaKysysmys");
         vastausTiedosto = new File("MuistikorttipakkaVastaus");
         assert kysymysTiedosto.canWrite();
@@ -53,8 +53,10 @@ public class Muistikorttipakka {
             }
            
             output2.close();
+            return true;
         } catch (IOException kirjoitusOngelma){
                 System.out.println("Kirjoittaminen ei onnistunut");
+                return false;
                 }
       
     } public void lisaaKortti(Muistikortti kortti) {
