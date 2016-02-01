@@ -9,67 +9,42 @@ package fi.cocacoca.domain.muistikorttipakka;
  *
  * @author cocacoca
  */
+import fi.cocacoca.domain.muistikorttipakka.IO.PakanTallennus;
 import java.util.ArrayList;
-import java.util.Scanner;
-
-import java.io.*;
-
 
 public class Muistikorttipakka {
 
-    private File kysymysTiedosto;
-    private File vastausTiedosto;
     private ArrayList<Muistikortti> korttipakka = new ArrayList<>();
     private String syote;
-    private Scanner lukija;
+
     private Muistikortti kortti;
 
     public Muistikorttipakka(Muistikortti kortti) {
-        
+
         korttipakka.add(kortti);
-        lukija=new Scanner(System.in);
-        
+
     }
 
     public Muistikorttipakka() {
-        lukija=new Scanner(System.in);
-        kortti=new Muistikortti();
-        
+
+        kortti = new Muistikortti();
+
     }
 
-    public boolean tallennaPakka() {
-        kysymysTiedosto = new File("MuistikorttipakkaKysysmys");
-        vastausTiedosto = new File("MuistikorttipakkaVastaus");
-        assert kysymysTiedosto.canWrite();
-        assert vastausTiedosto.canWrite();
-        try  {
-            BufferedWriter output = new BufferedWriter(new FileWriter(kysymysTiedosto));
-            for (Muistikortti korttipakka1 : korttipakka) {
-                output.write(korttipakka1.getKysymys()+"\n");
-            } output.close();
-            BufferedWriter output2 = new BufferedWriter(new FileWriter(vastausTiedosto));
-            for (Muistikortti korttipakka1 : korttipakka) {
-                output2.write(korttipakka1.getVastaus()+"\n");
-            }
-           
-            output2.close();
-            return true;
-        } catch (IOException kirjoitusOngelma){
-                System.out.println("Kirjoittaminen ei onnistunut");
-                return false;
-                }
-      
-    } public void lisaaKortti(Muistikortti kortti) {
-       
-            
-        
+    public void tallennaPakka() {
+        new PakanTallennus("MuistikorttipakkaKysymys", "MuistikorttipakkaVastaus")
+                .tallennaPakka(korttipakka);
+    }
+
+    public void lisaaKortti(Muistikortti kortti) {
+
         korttipakka.add(kortti);
         System.out.println("Kortti lisätty");
     }
 
     public ArrayList tulostapakka() {
         return korttipakka;
-       // for (Muistikortti k : korttipakka) {
+        // for (Muistikortti k : korttipakka) {
         //    System.out.println(k);
         //}
     }
@@ -82,15 +57,19 @@ public class Muistikorttipakka {
             System.out.println("Korttia ei poistettu.");
         }
 
-    }public String etsiKortti(Muistikortti k){
-        for(Muistikortti m : korttipakka){
-            if(korttipakka.contains(k)){
-              return "löytyi";  
-            }
-        } return "ei löydy";
-    }public int korttienLkm(){
-        return korttipakka.size();
     }
 
+    public String etsiKortti(Muistikortti k) {
+        for (Muistikortti m : korttipakka) {
+            if (korttipakka.contains(k)) {
+                return "löytyi";
+            }
+        }
+        return "ei löydy";
+    }
+
+    public int korttienLkm() {
+        return korttipakka.size();
+    }
 
 }

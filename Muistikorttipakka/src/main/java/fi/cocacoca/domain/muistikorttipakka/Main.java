@@ -15,8 +15,12 @@ public class Main {
         Muistikorttipakka m=new Muistikorttipakka();
         Muistikortti k=new Muistikortti("k","v");
          Muistikortti kokeiluKortti =new Muistikortti("toimiiko","etsintä"); 
+        Muistikortti k1=new Muistikortti("k","v"); 
+        Muistikortti k2=new Muistikortti("k","v");
         System.out.println(m);
         m.lisaaKortti(k);
+        m.lisaaKortti(k1);
+        m.lisaaKortti(k2);
         m.lisaaKortti(kokeiluKortti);
       m.tallennaPakka();
       SelaaMuistikorttipakka s=new SelaaMuistikorttipakka();

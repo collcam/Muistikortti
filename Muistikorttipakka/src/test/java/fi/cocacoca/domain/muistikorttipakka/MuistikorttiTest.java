@@ -18,6 +18,7 @@ public class MuistikorttiTest {
     @Before
     public void setUp(){
         
+        
     }@Test
     public void konstruktoriAsettaaOikeanAlkuarvon(){
      kortti=new Muistikortti();
@@ -27,5 +28,9 @@ public class MuistikorttiTest {
     public void parametrillinenkonstruktoriToimii(){
         kortti=new Muistikortti("kysymys","vastaus");
         assertEquals(kortti.toString(),"kysymys : vastaus");
+    }@Test
+    public void toStringOnOikein(){
+      kortti=new Muistikortti("k","v");
+      assertEquals(kortti.toString(),"k : v");
     }
 }
