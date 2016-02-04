@@ -30,7 +30,7 @@ public class Muistikortti {
     }public String getKysymys(){
         return this.kysymys;
     }public String toString(){
-        return getKysymys()+" : "+getVastaus();
+        return getKysymys()+":"+getVastaus();
     }
     
 }

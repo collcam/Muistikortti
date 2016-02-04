@@ -39,25 +39,20 @@ public class Muistikorttipakka {
     public void lisaaKortti(Muistikortti kortti) {
 
         korttipakka.add(kortti);
-        System.out.println("Kortti lisätty");
+       
     }
 
     public ArrayList tulostapakka() {
         return korttipakka;
-        // for (Muistikortti k : korttipakka) {
-        //    System.out.println(k);
-        //}
+        
     }
 
-    public void poistaKortti(Muistikortti kortti) {
-
-        if (korttipakka.remove(kortti) == true) {
-            System.out.println("Kortti poistettu.");
-        } else {
-            System.out.println("Korttia ei poistettu.");
+    public boolean poistaKortti(Muistikortti kortti) {
+       return korttipakka.remove(kortti);
+        
         }
 
-    }
+    
 
     public String etsiKortti(Muistikortti k) {
         for (Muistikortti m : korttipakka) {

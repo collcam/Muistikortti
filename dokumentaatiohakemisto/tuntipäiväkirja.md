@@ -25,6 +25,18 @@ Olen kipeänä kuumeen kanssa!!! Olisin halunnut kysyä apua työhöni pajasta e
 
 Edelleen kipeä ja missasin mahdollisuuden kysyä pajasta apua ennen deadlinea. yritän tehdä muita osia mutta kyllä harmittaa.
 
-**28.09.2016**
+**28.01.2016**
 
 Yritän selvitellä edelleen testausta ja miksi se ei toimi. Itse ohjelmointisuus menee tällä hetkellä ihan hyvin.
+
+**29.01.2016**
+
+ATTE ON PARAS!!!!! <3 se onnistui hetken pohdittuaan korjata koko ongelman. Sain palautettua kaiken ajallaan ja on mahtava fiilis.
+
+**01.01.2016**
+
+Olen paljon sumplinut tiedoston lukua joka ei toimi nyt kunnolla ja miten sitä lähtisin testaamaan. Myös luokka kaaviota olen miettinyt ja aijon tehdä varmaan uuden kansion.
+
+**01.03.2016**
+
+Tiedostonluku toimii vihdoin ja kirjoittaminenkin sujuu. Testaus ei ihan toimi oikein tosin, sitä pitää vielä korjailla. Enkä tiedä miten luokkakaaviota lähtisin nyt muokkaamaan vastaamaan tämän hetkistä tilaani.

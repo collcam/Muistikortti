@@ -33,8 +33,7 @@ public class PakanTallennus {
 
     public boolean tallennaPakka(ArrayList<Muistikortti> korttipakka) {
         
-        assert kysymysTiedosto.canWrite();
-        assert vastausTiedosto.canWrite();
+   
         try {
             BufferedWriter output = new BufferedWriter(new FileWriter(kysymysTiedosto));
             for (Muistikortti korttipakka1 : korttipakka) {
@@ -48,19 +47,19 @@ public class PakanTallennus {
 
             output2.close();
             return true;
-        } catch (IOException kirjoitusOngelma) {
+        } catch (Exception e) {
             System.out.println("Kirjoittaminen ei onnistunut");
             return false;
         }
+        
 
     }public ArrayList lueMuistikorttipakkaTiedosto(String knimi, String vnimi) {
         
-        ArrayList<String> tulostaja=new ArrayList<>();
+       ArrayList<String> tulostaja=new ArrayList<>();
         
-        try { //kysymysTiedosto= new File(knimi);
-            //vastausTiedosto= new File(vnimi);
+        try {  
             if (!kysymysTiedosto.exists() || !vastausTiedosto.exists()) {
-              System.out.println("Ei löydä tiedostoa.");
+             
                 return tulostaja;
             }
             Scanner klukija = new Scanner(kysymysTiedosto);
@@ -73,7 +72,7 @@ public class PakanTallennus {
             }
             return tulostaja;
         } catch (Exception e) {
-            System.out.println("Tiedoston lukeminen epäonnistui.");
+            
             return tulostaja;
         }
 

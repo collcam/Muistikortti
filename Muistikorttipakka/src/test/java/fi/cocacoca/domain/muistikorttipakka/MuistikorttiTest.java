@@ -14,23 +14,24 @@ import org.junit.Test;
 
 public class MuistikorttiTest {
     Muistikortti kortti;
+    Muistikortti kortti2;
     
     @Before
     public void setUp(){
-        
-        
+      kortti=new Muistikortti();   
+       kortti2=new Muistikortti("kysymys","vastaus"); 
     }@Test
     public void konstruktoriAsettaaOikeanAlkuarvon(){
-     kortti=new Muistikortti();
-    assertEquals(kortti.toString(), " : ");
+    
+    assertEquals(kortti.toString(), ":");
     }
     @Test
     public void parametrillinenkonstruktoriToimii(){
-        kortti=new Muistikortti("kysymys","vastaus");
-        assertEquals(kortti.toString(),"kysymys : vastaus");
+       
+        assertEquals(kortti2.toString(),"kysymys:vastaus");
     }@Test
     public void toStringOnOikein(){
-      kortti=new Muistikortti("k","v");
-      assertEquals(kortti.toString(),"k : v");
+     
+      assertEquals(kortti2.toString(),"kysymys:vastaus");
     }
 }

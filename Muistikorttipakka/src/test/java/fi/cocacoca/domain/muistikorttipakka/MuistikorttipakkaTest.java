@@ -44,14 +44,14 @@ import static org.junit.Assert.*;
         
     }@Test
     public void poistuukoKortti(){
-        pakka.poistaKortti(kortti);
-        assertEquals(pakka.korttienLkm(), 0);
+       assertEquals(pakka.poistaKortti(kortti), true);
+       
     
     }@Test
     public void olemattomanKortinPoistoyritys(){
         Muistikortti k=new Muistikortti("kysymys","vastaus");
-        pakka.poistaKortti(k);
-        assertEquals(pakka.korttienLkm(), 1);
+        assertEquals(pakka.poistaKortti(k),false);
+        
         
     }@Test
     public void etsiKorttiLoytaaKortin(){
