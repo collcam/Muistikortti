@@ -9,6 +9,6 @@
 
 [tuntipäiväkirja](dokumentaatiohakemisto/tuntipäiväkirja.md)
 
-[pit-testit](dokumentaatiohakemisto/pit-testit/20160129161647)
+[pit-testit](dokumentaatiohakemisto/pit-testit/201602051543)
 
 

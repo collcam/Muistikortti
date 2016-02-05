@@ -42,7 +42,7 @@ public class Muistikorttipakka {
        
     }
 
-    public ArrayList tulostapakka() {
+    public ArrayList<Muistikortti> tulostapakka() {
         return korttipakka;
         
     }

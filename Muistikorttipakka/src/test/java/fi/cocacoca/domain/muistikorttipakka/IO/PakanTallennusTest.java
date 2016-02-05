@@ -26,7 +26,7 @@ public class PakanTallennusTest {
     Muistikorttipakka pakka;
     Muistikortti k;
     Muistikortti k2;
-
+ArrayList<String> a;
     @Before
     public void setUp() {
         p=new PakanTallennus("testik","testiv");
@@ -34,7 +34,7 @@ public class PakanTallennusTest {
         k2 = new Muistikortti("k", "v");
         pakka = new Muistikorttipakka(k);
         pakka.lisaaKortti(k2);
-        ArrayList<String> a=new ArrayList<>();
+        a=new ArrayList<>();
        a.add(k.toString());
        a.add(k2.toString());
         
@@ -45,11 +45,20 @@ public class PakanTallennusTest {
         assertTrue(p.tallennaPakka(pakka.tulostapakka()));
     }
     
-    //@Test
-    //public void toimiikoPakanLataus(){
-      //  System.out.println(p.lueMuistikorttipakkaTiedosto("testik", "testiv"));
-        //System.out.println(pakka.tulostapakka());
-       // assertTrue(p.lueMuistikorttipakkaTiedosto("testik", "testiv").equals(pakka.tulostapakka()));
-   // }
+    @Test
+    public void toimiikoPakanLataus(){
+       // pakka.tallennaPakka();
+        
+       // ArrayList<String> a2=new ArrayList<>();
+   // a2= p.lueMuistikorttipakkaTiedosto("testik", "testiv");
+        
+    //System.out.println(pakka.tulostapakka());
+        
+        //  assertEquals(p.lueMuistikorttipakkaTiedosto("testik", "testiv").equals(pakka.tulostapakka()));
+        
+    
+    }
+     
+    }
 
-}
+

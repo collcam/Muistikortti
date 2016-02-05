@@ -24,13 +24,11 @@ public class SelaaMuistikorttipakka {
     }
 
     public ArrayList lueMuistikorttipakkaTiedosto(String knimi, String vnimi) {
-        try{
        return new PakanTallennus("MuistikorttipakkaKysymys", "MuistikorttipakkaVastaus")
                .lueMuistikorttipakkaTiedosto(knimi, vnimi);
 
-    }catch(Exception e){
-        System.out.println("ei voitu lukea tiedostoa.");
+    }
         
-    }return null;
+    }
 
-}}
+
