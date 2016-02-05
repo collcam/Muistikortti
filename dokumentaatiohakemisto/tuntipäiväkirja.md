@@ -19,24 +19,25 @@ Tänään aloitin luokkakaavion tekemisen. En oikein saa sitä toimimaan haluama
 
 **25.01.2016**
 
-Olen kipeänä kuumeen kanssa!!! Olisin halunnut kysyä apua työhöni pajasta enkä saa testausta toimimaan oikein jostain syystä.
+Olen kipeänä kuumeen kanssa!!! Olisin halunnut kysyä apua työhöni pajasta enkä saa testausta toimimaan oikein jostain syystä. 3 tuntia.
 
 **27.01.2016**
 
-Edelleen kipeä ja missasin mahdollisuuden kysyä pajasta apua ennen deadlinea. yritän tehdä muita osia mutta kyllä harmittaa.
+Edelleen kipeä ja missasin mahdollisuuden kysyä pajasta apua ennen deadlinea. yritän tehdä muita osia mutta kyllä harmittaa. 2tuntia
 
 **28.01.2016**
 
-Yritän selvitellä edelleen testausta ja miksi se ei toimi. Itse ohjelmointisuus menee tällä hetkellä ihan hyvin.
+Yritän selvitellä edelleen testausta ja miksi se ei toimi. Itse ohjelmointisuus menee tällä hetkellä ihan hyvin.5h
 
 **29.01.2016**
 
-ATTE ON PARAS!!!!! <3 se onnistui hetken pohdittuaan korjata koko ongelman. Sain palautettua kaiken ajallaan ja on mahtava fiilis.
+ATTE ON PARAS!!!!! <3 se onnistui hetken pohdittuaan korjata koko ongelman. Sain palautettua kaiken ajallaan ja on mahtava fiilis. 3h
 
 **01.01.2016**
 
-Olen paljon sumplinut tiedoston lukua joka ei toimi nyt kunnolla ja miten sitä lähtisin testaamaan. Myös luokka kaaviota olen miettinyt ja aijon tehdä varmaan uuden kansion.
+Olen paljon sumplinut tiedoston lukua joka ei toimi nyt kunnolla ja miten sitä lähtisin testaamaan. Myös luokka kaaviota olen miettinyt ja aijon tehdä varmaan uuden kansion.2h
 
 **01.03.2016**
 
-Tiedostonluku toimii vihdoin ja kirjoittaminenkin sujuu. Testaus ei ihan toimi oikein tosin, sitä pitää vielä korjailla. Enkä tiedä miten luokkakaaviota lähtisin nyt muokkaamaan vastaamaan tämän hetkistä tilaani.
+Tiedostonluku toimii vihdoin ja kirjoittaminenkin sujuu. Testaus ei ihan toimi oikein tosin, sitä pitää vielä korjailla. Enkä tiedä miten luokkakaaviota lähtisin nyt muokkaamaan vastaamaan tämän hetkistä tilaani.4h
+
