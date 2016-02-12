@@ -5,15 +5,15 @@
  */
 package fi.cocacoca.domain.muistikorttipakka.IO;
 
+import fi.cocacoca.domain.muistikorttipakka.io.PakanTallennus;
 import fi.cocacoca.domain.muistikorttipakka.Muistikortti;
 import fi.cocacoca.domain.muistikorttipakka.Muistikorttipakka;
-import java.io.File;
+
+import java.io.*;
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
+import java.util.Scanner;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -22,43 +22,39 @@ import org.junit.Test;
  */
 public class PakanTallennusTest {
 
+    File f;
+    Scanner lukija;
     PakanTallennus p;
     Muistikorttipakka pakka;
     Muistikortti k;
     Muistikortti k2;
-ArrayList<String> a;
+    ArrayList<String> a;
+
     @Before
     public void setUp() {
-        p=new PakanTallennus("testik","testiv");
+        f = new File("Muistikorttipakka");
+        p = new PakanTallennus();
         k = new Muistikortti("k", "v");
-        k2 = new Muistikortti("k", "v");
         pakka = new Muistikorttipakka(k);
-        pakka.lisaaKortti(k2);
-        a=new ArrayList<>();
-       a.add(k.toString());
-       a.add(k2.toString());
-        
+        pakka.lisaaKortti(k);
+        try {
+            lukija = new Scanner(f);
+        } catch (FileNotFoundException e) {
+            return;
+        }
     }
+
+    @Test
+    public void konstruktoriToimii() {
+        assertEquals(p.getTiedosto(), f.getAbsolutePath());
+    }
+
     @Test
     public void pakanTallennusToimii() {
-  
+        assertTrue(p.tallennaPakka(null) == false);
         assertTrue(p.tallennaPakka(pakka.tulostapakka()));
-    }
-    
-    @Test
-    public void toimiikoPakanLataus(){
-       // pakka.tallennaPakka();
-        
-       // ArrayList<String> a2=new ArrayList<>();
-   // a2= p.lueMuistikorttipakkaTiedosto("testik", "testiv");
-        
-    //System.out.println(pakka.tulostapakka());
-        
-        //  assertEquals(p.lueMuistikorttipakkaTiedosto("testik", "testiv").equals(pakka.tulostapakka()));
-        
-    
-    }
-     
+        assertTrue(lukija.nextLine().equals("k"));
+        assertTrue(lukija.nextLine().equals("v"));
     }
 
-
+}

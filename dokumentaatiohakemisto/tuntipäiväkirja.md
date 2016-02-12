@@ -37,7 +37,26 @@ ATTE ON PARAS!!!!! <3 se onnistui hetken pohdittuaan korjata koko ongelman. Sain
 
 Olen paljon sumplinut tiedoston lukua joka ei toimi nyt kunnolla ja miten sitä lähtisin testaamaan. Myös luokka kaaviota olen miettinyt ja aijon tehdä varmaan uuden kansion.2h
 
-**01.03.2016**
+**01.02.2016**
 
 Tiedostonluku toimii vihdoin ja kirjoittaminenkin sujuu. Testaus ei ihan toimi oikein tosin, sitä pitää vielä korjailla. Enkä tiedä miten luokkakaaviota lähtisin nyt muokkaamaan vastaamaan tämän hetkistä tilaani.4h
 
+**04.02.2016**
+
+Tänään rupesin tekemään käyttöjärjestelmää.5h
+
+**06.02.2016**
+
+Huomasin että luokkani eivät ihan toimi halutusti. Testauksessa on ongelmaa mutta en saanut siihen apua koska kukaan ei osannut auttaa.3h
+
+**07.02.2016**
+
+Käyttöjärjestelmä ei toimi halutusti. En tiedä missä mättää mutta ikkuna syntyy pisteenä ja tyhjänä. 4h
+
+**10.02.2016**
+
+Pajasta sain apua käyttöjärjestelmään. Nyt syntyy ikkuna mutta logiikkapuolta on vielä hiottava. 
+
+**12.02.2016**
+
+Vielä testaus ei toimi miten haluaisin edelleen sama virhe vaikka mitä yritän. En ehdi vaihtaa Käyttöjärjestelmän rakennetta ja heivata periRakentajaan graaffisen käyttöliittymän teko se jää seuraavaan kertaan.
