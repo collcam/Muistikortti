@@ -9,6 +9,8 @@
 
 [tuntipäiväkirja](dokumentaatiohakemisto/tuntipäiväkirja.md)
 
-[pit-testit](dokumentaatiohakemisto/pit-testit/201602051543)
+[pit-testit](dokumentaatiohakemisto/pit-testit/201602122116)
+
+[checkstype-raportti] (dokumenttihakemisto/checkstyle.html)
 
 
