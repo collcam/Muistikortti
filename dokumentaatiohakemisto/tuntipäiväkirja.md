@@ -55,8 +55,28 @@ Käyttöjärjestelmä ei toimi halutusti. En tiedä missä mättää mutta ikkun
 
 **10.02.2016**
 
-Pajasta sain apua käyttöjärjestelmään. Nyt syntyy ikkuna mutta logiikkapuolta on vielä hiottava. 
+Pajasta sain apua käyttöjärjestelmään. Nyt syntyy ikkuna mutta logiikkapuolta on vielä hiottava. 3h
 
 **12.02.2016**
 
-Vielä testaus ei toimi miten haluaisin edelleen sama virhe vaikka mitä yritän. En ehdi vaihtaa Käyttöjärjestelmän rakennetta ja heivata periRakentajaan graaffisen käyttöliittymän teko se jää seuraavaan kertaan.
+Vielä testaus ei toimi miten haluaisin edelleen sama virhe vaikka mitä yritän. En ehdi vaihtaa Käyttöjärjestelmän rakennetta ja heivata periRakentajaan graaffisen käyttöliittymän teko se jää seuraavaan kertaan.4h
+
+**15.02.2016**
+
+Nyt olen saanut kovasti vastariitaista neuvoa käyttöliittymästä ja edelleenkään kukaan ei ole osannut auttaa käyttöliittymäongelmassani. 4h
+
+**16.02.2016**
+
+Muokkasin logiikkaa. 3h
+
+**17.02.2016**
+
+edelleenkin käyttöliittymä reistailee ja pajassa ei selvennyt mikä oli vikana. NYt alkaa jo huolettaa ja masentaa että miksi tarvitsee  tehdä käyttöliittymä jos kerran kurssin kaikki ohjaajat eivät osaa sitä tarpeeksi. Tuntuu siltä että saan ihan eri neuvoja kaikiltä ohjaajilta.
+
+**18.02.2016**
+
+Yritän sinnikkäästi edelleen setviä käyttöliittymän JFileChooserin kanssa ja se ei vain toimi.5h
+
+**19.02.2016**
+
+Palautus. 8h

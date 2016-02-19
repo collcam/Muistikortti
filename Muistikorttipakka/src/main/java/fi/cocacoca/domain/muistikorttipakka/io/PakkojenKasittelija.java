@@ -6,6 +6,9 @@
 package fi.cocacoca.domain.muistikorttipakka.io;
 
 import fi.cocacoca.domain.muistikorttipakka.Muistikortti;
+import fi.cocacoca.domain.muistikorttipakka.Muistikortti;
+import fi.cocacoca.domain.muistikorttipakka.Main;
+import fi.cocacoca.domain.muistikorttipakka.kayttoliittyma.Kayttoliittyma;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,10 +22,6 @@ import java.util.Scanner;
  * @author cocacoca
  */
 public class PakkojenKasittelija {
-
-    public PakkojenKasittelija() {
-
-    }
 
     public static ArrayList<Muistikortti> load(File file) throws FileNotFoundException {
         Scanner lukija = new Scanner(file);

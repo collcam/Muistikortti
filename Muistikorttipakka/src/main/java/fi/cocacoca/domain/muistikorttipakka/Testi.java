@@ -23,8 +23,8 @@ public class Testi {
      * toisella rivillä olevat vastaukset ja tarkistaa vastaavatko käyttäjän
      * syötteet tiedostosta löytyviä vastauksia.
      */
-    public static boolean testaa(String syöte, Muistikortti kortti) {
-        return kortti.getVastaus().equalsIgnoreCase(syöte);
+    public static boolean testaa(String syote, Muistikortti kortti) {
+        return kortti.getVastaus().equalsIgnoreCase(syote);
 
     }
 

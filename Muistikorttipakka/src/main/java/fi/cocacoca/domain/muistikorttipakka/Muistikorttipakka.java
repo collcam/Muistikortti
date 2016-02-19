@@ -48,7 +48,7 @@ public class Muistikorttipakka {
      *
      * @return totuusarvo onnistuiko tallennus vai ei
      */
-    public boolean tallennaPakka() {
+    public boolean tallennaPakka(File f) {
 
         return PakkojenKasittelija.tallennaPakka(arrayPakka, f);
     }
@@ -69,11 +69,6 @@ public class Muistikorttipakka {
 
     }
 
-    public ArrayList<Muistikortti> tulostapakka() {
-        return arrayPakka;
-
-    }
-
     /**
      * Metodi poistaa parametrinä annetun kortin arrayLististä.
      *
@@ -82,6 +77,11 @@ public class Muistikorttipakka {
      */
     public boolean poistaKortti(Muistikortti kortti) {
         return arrayPakka.remove(kortti);
+
+    }
+
+    public int korttienLkm() {
+        return arrayPakka.size();
 
     }
 
@@ -119,11 +119,6 @@ public class Muistikorttipakka {
             }
         }
         return false;
-    }
-
-    public int korttienLkm() {
-        return arrayPakka.size();
-
     }
 
     public Muistikortti jaaKortti() {

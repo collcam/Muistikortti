@@ -5,13 +5,12 @@
  */
 package fi.cocacoca.domain.muistikorttipakka;
 
-import fi.cocacoca.domain.muistikorttipakka.io.PakkojenKasittelija;
-import java.io.File;
-import java.io.IOException;
-import org.junit.Before;
+import static fi.cocacoca.domain.muistikorttipakka.Testi.testaa;
 
-import org.junit.Test;
+import java.io.IOException;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  *
@@ -19,30 +18,19 @@ import static org.junit.Assert.*;
  */
 public class TestiTest {
 
-    PakkojenKasittelija pakankasittely;
-    File tiedosto;
-    String kysymys, vastaus;
-    Testi t;
+    
+    Muistikortti m;
+    
 
     @Before
     public void setUp() throws IOException {
-        pakankasittely = new PakkojenKasittelija();
-        tiedosto = new File("Muistikorttipakka");
-        kysymys = "";
-        vastaus = "";
-        t  = new Testi();
+         m=new Muistikortti("hei","hello");
+        
     }
 
     @Test
-    public void konstruktoriToimii() {
-        assertEquals(tiedosto.getName(), "Muistikorttipakka");
-        assertEquals(t.getKysymys(), "");
-        assertEquals(t.getVastaus(), "");
-    }
-
-    @Test
-    public void testGetTiedosto() {
-        assertEquals("Muistikorttipakka", t.getTiedosto().getName());
+    public void testaaToimii() {
+        assertTrue(testaa("hello",m));
     }
 
 }

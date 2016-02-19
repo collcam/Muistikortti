@@ -5,8 +5,6 @@
  */
 package fi.cocacoca.domain.muistikorttipakka;
 
-
-
 /**
  *
  * @author cocacoca
@@ -41,7 +39,5 @@ public class Muistikortti {
     public String getKysymys() {
         return this.kysymys;
     }
-
-    
 
 }

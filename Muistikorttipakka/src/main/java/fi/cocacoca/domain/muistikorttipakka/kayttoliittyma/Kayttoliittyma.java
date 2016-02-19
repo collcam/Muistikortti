@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fi.cocacoca.domain.muistikorttipakka.kayttoliittyma;
 
 import fi.cocacoca.domain.muistikorttipakka.Muistikortti;
@@ -22,36 +17,29 @@ import javax.swing.*;
  * @author cocacoca
  */
 public class Kayttoliittyma extends JFrame implements ActionListener {
-
     private Testi t;
     private Muistikortti kortti;
     private Muistikorttipakka pakka = new Muistikorttipakka();
-    private JButton lisaysNappi, poistoNappi, testiNappi, vastaaNappi, muokkaaPakkaa, tiedostonHakuNappi, tiedostonTekoNappi;
+    JFrame frame = new JFrame();
+    private JButton lisaysNappi, poistoNappi, testiNappi, vastaaNappi, muokkaaPakkaa, tiedostonHakuNappi, tiedostonTekoNappi, tallennaPakkaNappi;
     private JPanel alkupaneeli, muokkauspaneeli, cpanel, testauspaneeli;
     private JLabel vOtsikko, kOtsikko, ohjaus, tarkistus, testikysymys;
     private JTextField testikentta, vastauskentta, kysymyskentta;
-    private CardLayout c1 = new CardLayout();
-    private String vastaus;
-    private Scanner lukija;
-    private JFileChooser fc;
-
+    private File tiedosto;
+    CardLayout c1 = new CardLayout();
+    Scanner lukija;
+    JFileChooser fc = new JFileChooser();
     /**
      * Konstruktori on tällä hetkellä liian pitkä ja tämä on tarkoitus siirtää
      * omaan luokkaansa Konstruktori siis tällä hetkellä rakentaa graaffisen
      * käyttöliittymän
      */
     public Kayttoliittyma() {
-        vastaus = "";
-        fc = new JFileChooser();
-
         //paneelien luonti
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(480, 290);
         cpanel = new JPanel();
         alkupaneeli = new JPanel();
         muokkauspaneeli = new JPanel();
         testauspaneeli = new JPanel();
-
         cpanel.setLayout(c1);
 
         //alkupaneeli
@@ -69,6 +57,7 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
         vOtsikko = new JLabel("Vastaus:");
         kysymyskentta = new JTextField(40);
         vastauskentta = new JTextField(40);
+        tallennaPakkaNappi = new JButton("tallenna pakka");
         lisaysNappi = new JButton("lisää kortti");
         poistoNappi = new JButton("poista kortti");
         testiNappi = new JButton("Testaukseen siirtyminen");
@@ -81,45 +70,42 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
         muokkauspaneeli.add(lisaysNappi);
         muokkauspaneeli.add(poistoNappi);
         muokkauspaneeli.add(testiNappi);
+        muokkauspaneeli.add(tallennaPakkaNappi);
 
         //Testauspaneeli
         testikysymys = new JLabel("");
-
         vastaaNappi = new JButton("vastaa");
         testikentta = new JTextField(40);
-
         testauspaneeli.add(testikysymys);
         testauspaneeli.add(testikentta);
         testauspaneeli.add(vastaaNappi);
 
-        //lisää paneelit CardLayoutille
+        //lisää paneelit controlPaneelille ja controlPanel JFrameen 
         cpanel.add(alkupaneeli, "aloitus");
         cpanel.add(muokkauspaneeli, "pakan muokkaus");
         cpanel.add(testauspaneeli, "testi");
 
         c1.show(cpanel, "aloitus");
-        this.add(cpanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(700, 300);
+        frame.add(cpanel);
+        frame.setVisible(true);
 
         //kuuntelijat
         muokkaaPakkaa.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ohjaus.setText("Kirjoita kysymys ja vastaus ja valitse haluatko etsiä ja poistaa kortin vai lisätä sen. \n Kun olet valmis paina tallennusnappia.");
                 c1.show(cpanel, "pakan muokkaus");
-
             }
         });
 
         testiNappi.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 testikysymys.setText("Kysymys: " + pakka.jaaKortti().getKysymys());
                 c1.show(cpanel, "testi");
-
             }
-
         });
-
         poistoNappi.addActionListener(this);
         vastaaNappi.addActionListener(this);
         lisaysNappi.addActionListener(this);
@@ -132,33 +118,38 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
 
         Object aiheuttaja = e.getSource();
         if (aiheuttaja == tiedostonTekoNappi) {
-
             try {
-                fc.showSaveDialog(null);
-                pakka.setTiedosto(fc.getSelectedFile());
-                pakka.tallennaPakka();
-                ohjaus.setText("Perustettiin pakka nimeltä: " + fc.getSelectedFile().getName());
-                ohjaus.repaint();
-
+                fc.setDialogTitle("Luo uusi Muistipakkatiedosto");
+                int userSelection = fc.showSaveDialog(null);
+                if (userSelection == fc.showSaveDialog(null)) {
+                    tiedosto = fc.getSelectedFile();
+                    pakka.setTiedosto(tiedosto);
+                    ohjaus.setText("Perustettiin pakka");
+                    ohjaus.repaint();
+                }
             } catch (Exception a) {
                 ohjaus.setText("Yritä uudelleen teidostoa ei tehty.");
                 ohjaus.repaint();
             }
-
         }
-
         if (aiheuttaja == tiedostonHakuNappi) {
-            fc.showOpenDialog(null);
             try {
-                pakka.haeKorttipakka(fc.getSelectedFile());
-                ohjaus.setText("Haettu pakka nimeltä: " + fc.getName());
-            } catch (FileNotFoundException n) {
-                ohjaus.setText("Tiedostoa ei haettu.");
+                int result = fc.showOpenDialog(null);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    tiedosto = fc.getSelectedFile();
+                    ohjaus.setText("valittu tiedosto nimeltä:: " + tiedosto.getName());
+                    ohjaus.repaint();
+                    pakka.haeKorttipakka(tiedosto);
+                }
+
+            } catch (Exception n) {
+                ohjaus.setText("Tiedostoa ei haettu,yritä uudelleen");
                 ohjaus.repaint();
             }
-
         }
-
+        if (aiheuttaja == tallennaPakkaNappi) {
+            pakka.tallennaPakka(tiedosto);
+        }
         if (aiheuttaja == lisaysNappi) {
             if (!vastauskentta.getText().equalsIgnoreCase("") && !kysymyskentta.getText().equalsIgnoreCase("")) {
                 kortti = new Muistikortti(kysymyskentta.getText(), vastauskentta.getText());
@@ -169,14 +160,10 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
                 kysymyskentta.repaint();
                 vastauskentta.repaint();
                 ohjaus.repaint();
-                pakka.tallennaPakka();
             }
-
         }
         if (aiheuttaja == poistoNappi) {
-
             if (!vastauskentta.getText().equalsIgnoreCase("") && !kysymyskentta.getText().equalsIgnoreCase("")) {
-
                 if (pakka.poistaKorttiTiedoilla(kysymyskentta.getText(), vastauskentta.getText()) == true) {
                     ohjaus.setText("Kortti postettiin, voit lisätä tai poistaa lisää kortteja tai jatkaa testiin.");
                     ohjaus.repaint();
@@ -184,7 +171,6 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
                     vastauskentta.setText("");
                     kysymyskentta.repaint();
                     vastauskentta.repaint();
-                    pakka.tallennaPakka();
                 } else {
                     kysymyskentta.setText("");
                     vastauskentta.setText("");
@@ -193,9 +179,7 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
                     ohjaus.setText("Korttia ei löydy pakasta.");
                     ohjaus.repaint();
                 }
-
             }
-
         }
         if (aiheuttaja == vastaaNappi) {
             if (pakka.jaaKortti() != null) {

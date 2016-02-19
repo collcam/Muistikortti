@@ -23,12 +23,14 @@ public class MuistikorttiTest {
     @Test
     public void konstruktoriAsettaaOikeanAlkuarvon() {
 
-        assertEquals(kortti.toString(), ",");
+        assertEquals(kortti.getKysymys(), "");
+        assertEquals(kortti.getVastaus(), "");
     }
 
     @Test
     public void parametrillinenkonstruktoriToimii() {
 
-        assertEquals(kortti2.toString(), "kysymys,vastaus");
+        assertEquals(kortti2.getKysymys(), "kysymys");
+        assertEquals(kortti2.getVastaus(), "vastaus");
     }
 }
