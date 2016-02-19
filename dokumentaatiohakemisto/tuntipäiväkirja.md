@@ -80,3 +80,4 @@ Yritän sinnikkäästi edelleen setviä käyttöliittymän JFileChooserin kanssa
 **19.02.2016**
 
 Palautus. 8h
+checkstyle ei toimi koska suppressionissa on jotain vikaa mutten tiedä mitä.

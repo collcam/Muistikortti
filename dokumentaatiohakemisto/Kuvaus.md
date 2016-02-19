@@ -20,4 +20,4 @@ Opiskelija
 2. Sanaparien poisto
 	* Onnistuu mikäli kortti on olemassa.
 3. Korttien arpominen ja testaus
-4. Kaikkien korttien selaus
+
