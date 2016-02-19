@@ -17,12 +17,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
+/**Luokka tallentaa Muistikorttipakkoja ja hakee tiedostosta ArrayListana pakkoja.
  *
  * @author cocacoca
  */
 public class PakkojenKasittelija {
-
+/**
+ * Metodi load hakee tiedoston file ja lukee ne muistikorteiksi ArrayListaan.
+ * @param file
+ * @return
+ * @throws FileNotFoundException 
+ */
     public static ArrayList<Muistikortti> load(File file) throws FileNotFoundException {
         Scanner lukija = new Scanner(file);
         ArrayList<Muistikortti> a = new ArrayList<Muistikortti>();
@@ -33,7 +38,12 @@ public class PakkojenKasittelija {
         }
         return a;
     }
-
+/**
+ * tallennaPakka tallentaa korttipakan tiedostoon tekstinä.
+ * @param korttipakka
+ * @param tiedosto
+ * @return 
+ */
     public static boolean tallennaPakka(ArrayList<Muistikortti> korttipakka, File tiedosto) {
 
         try {

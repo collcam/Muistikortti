@@ -37,6 +37,12 @@ public class Muistikorttipakka {
         kortti = new Muistikortti();
 
     }
+    /**
+     * haeKorttipakka kutsuu PakkojenKasittelijan stativ metodia joka hakee korttipakan tiedostosta 
+     * @param f
+     * @return
+     * @throws FileNotFoundException 
+     */
 
     public ArrayList<Muistikortti> haeKorttipakka(File f) throws FileNotFoundException {
         this.f = f;
@@ -51,7 +57,10 @@ public class Muistikorttipakka {
     public boolean tallennaPakka(File f) {
 
         return PakkojenKasittelija.tallennaPakka(arrayPakka, f);
-    }
+    }/**
+     * asettaa tiedoston mihin arraylista tallennetaan.
+     * @param f 
+     */
 
     public void setTiedosto(File f) {
         this.f = f;
@@ -78,7 +87,10 @@ public class Muistikorttipakka {
     public boolean poistaKortti(Muistikortti kortti) {
         return arrayPakka.remove(kortti);
 
-    }
+    }/**
+     * palauttaa Muistikorttien lukumäärän pakassa
+     * @return 
+     */
 
     public int korttienLkm() {
         return arrayPakka.size();
@@ -119,7 +131,10 @@ public class Muistikorttipakka {
             }
         }
         return false;
-    }
+    }/**
+     * jakaa testausta varten uuden kortin pakan päältä
+     * @return 
+     */
 
     public Muistikortti jaaKortti() {
         if (!arrayPakka.isEmpty()) {
@@ -127,12 +142,18 @@ public class Muistikorttipakka {
         }
         return null;
 
-    }
+    }/**
+     * Jos testauksessa vastataan väärin metodia kutsutaan ja pakka sekoitetaan ennen jaaKorttia()
+     */
 
     public void vastattuVaarin() {
         Collections.shuffle(arrayPakka);
 
-    }
+    }/**
+     * Jos testauksessa vastataan oikein siirtyy kortti oikein vastattujen korttipakkaan vastattuOikein
+     * jolloin sitä ei enää testata.
+     * @param kortti 
+     */
 
     public void vastattuOikein(Muistikortti kortti) {
         vastattuOikein.add(kortti);
