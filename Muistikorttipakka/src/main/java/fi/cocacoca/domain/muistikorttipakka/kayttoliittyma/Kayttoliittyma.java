@@ -10,6 +10,8 @@ import fi.cocacoca.domain.muistikorttipakka.Muistikorttipakka;
 import fi.cocacoca.domain.muistikorttipakka.Testi;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+import java.util.*;
 import javax.swing.*;
 
 /**
@@ -24,11 +26,14 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
     private Testi t;
     private Muistikortti kortti;
     private Muistikorttipakka pakka = new Muistikorttipakka();
-    private JButton lisaysNappi, poistoNappi, testiNappi, vastaaNappi, muokkaaPakkaa;
+    private JButton lisaysNappi, poistoNappi, testiNappi, vastaaNappi, muokkaaPakkaa, tiedostonHakuNappi, tiedostonTekoNappi;
     private JPanel alkupaneeli, muokkauspaneeli, cpanel, testauspaneeli;
     private JLabel vOtsikko, kOtsikko, ohjaus, tarkistus, testikysymys;
     private JTextField testikentta, vastauskentta, kysymyskentta;
     private CardLayout c1 = new CardLayout();
+    private String vastaus;
+    private Scanner lukija;
+    private JFileChooser fc;
 
     /**
      * Konstruktori on tällä hetkellä liian pitkä ja tämä on tarkoitus siirtää
@@ -36,6 +41,9 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
      * käyttöliittymän
      */
     public Kayttoliittyma() {
+        vastaus = "";
+        fc = new JFileChooser();
+
         //paneelien luonti
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(480, 290);
@@ -48,10 +56,12 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
 
         //alkupaneeli
         ohjaus = new JLabel("muokataanko pakkaa vai testakaanko?");
-        alkupaneeli.add(ohjaus);
-        testiNappi = new JButton("Testaukseen siirtyminen");
-        alkupaneeli.add(testiNappi);
+        tiedostonHakuNappi = new JButton("Hae Pakka");
+        tiedostonTekoNappi = new JButton("Tee uusi pakka");
         muokkaaPakkaa = new JButton("Muokkaa pakkaa");
+        alkupaneeli.add(ohjaus);
+        alkupaneeli.add(tiedostonTekoNappi);
+        alkupaneeli.add(tiedostonHakuNappi);
         alkupaneeli.add(muokkaaPakkaa);
 
         //muokkauspaneeli
@@ -74,10 +84,11 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
 
         //Testauspaneeli
         testikysymys = new JLabel("");
-        kOtsikko = new JLabel("Kysymys:");
+
         vastaaNappi = new JButton("vastaa");
         testikentta = new JTextField(40);
-        testauspaneeli.add(kOtsikko);
+
+        testauspaneeli.add(testikysymys);
         testauspaneeli.add(testikentta);
         testauspaneeli.add(vastaaNappi);
 
@@ -91,7 +102,8 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
 
         //kuuntelijat
         muokkaaPakkaa.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent a) {
+            public void actionPerformed(ActionEvent e) {
+                ohjaus.setText("Kirjoita kysymys ja vastaus ja valitse haluatko etsiä ja poistaa kortin vai lisätä sen. \n Kun olet valmis paina tallennusnappia.");
                 c1.show(cpanel, "pakan muokkaus");
 
             }
@@ -99,26 +111,51 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
 
         testiNappi.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent a1) {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                testikysymys.setText("Kysymys: " + pakka.jaaKortti().getKysymys());
                 c1.show(cpanel, "testi");
+
             }
 
         });
 
         poistoNappi.addActionListener(this);
-        testiNappi.addActionListener(this);
         vastaaNappi.addActionListener(this);
         lisaysNappi.addActionListener(this);
-
+        tiedostonHakuNappi.addActionListener(this);
+        tiedostonTekoNappi.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
         Object aiheuttaja = e.getSource();
-        if (aiheuttaja == muokkaaPakkaa) {
+        if (aiheuttaja == tiedostonTekoNappi) {
 
-            ohjaus.setText("Kirjoita kysymys ja vastaus ja valitse haluatko etsiä ja poistaa kortin vai lisätä sen. \n Kun olet valmis paina tallennusnappia.");
+            try {
+                fc.showSaveDialog(null);
+                pakka.setTiedosto(fc.getSelectedFile());
+                pakka.tallennaPakka();
+                ohjaus.setText("Perustettiin pakka nimeltä: " + fc.getSelectedFile().getName());
+                ohjaus.repaint();
+
+            } catch (Exception a) {
+                ohjaus.setText("Yritä uudelleen teidostoa ei tehty.");
+                ohjaus.repaint();
+            }
+
+        }
+
+        if (aiheuttaja == tiedostonHakuNappi) {
+            fc.showOpenDialog(null);
+            try {
+                pakka.haeKorttipakka(fc.getSelectedFile());
+                ohjaus.setText("Haettu pakka nimeltä: " + fc.getName());
+            } catch (FileNotFoundException n) {
+                ohjaus.setText("Tiedostoa ei haettu.");
+                ohjaus.repaint();
+            }
 
         }
 
@@ -136,11 +173,8 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
             }
 
         }
-        if (aiheuttaja == testiNappi) {
-            pakka.tallennaPakka();
-
-        }
         if (aiheuttaja == poistoNappi) {
+
             if (!vastauskentta.getText().equalsIgnoreCase("") && !kysymyskentta.getText().equalsIgnoreCase("")) {
 
                 if (pakka.poistaKorttiTiedoilla(kysymyskentta.getText(), vastauskentta.getText()) == true) {
@@ -153,22 +187,29 @@ public class Kayttoliittyma extends JFrame implements ActionListener {
                     pakka.tallennaPakka();
                 } else {
                     kysymyskentta.setText("");
+                    vastauskentta.setText("");
+                    kysymyskentta.repaint();
+                    vastauskentta.repaint();
+                    ohjaus.setText("Korttia ei löydy pakasta.");
+                    ohjaus.repaint();
                 }
-                vastauskentta.setText("");
-                kysymyskentta.repaint();
-                vastauskentta.repaint();
-                ohjaus.setText("Korttia ei löydy pakasta.");
-                ohjaus.repaint();
 
             }
 
         }
         if (aiheuttaja == vastaaNappi) {
-            kortti.setKysymys(kysymyskentta.getText());
-            kortti.setVastaus(vastauskentta.getText());
-            pakka.lisaaKortti(kortti);
+            if (pakka.jaaKortti() != null) {
+                testikysymys.setText("Kysymys: " + pakka.jaaKortti().getKysymys());
 
+                if (Testi.testaa(testikentta.getText(), kortti) == false) {
+                    pakka.vastattuVaarin();
+                } else {
+                    pakka.vastattuOikein(kortti);
+                }
+            } else {
+                testikysymys.setText("Läpäisit testin!");
+            }
+            testikysymys.repaint();
         }
     }
-
 }

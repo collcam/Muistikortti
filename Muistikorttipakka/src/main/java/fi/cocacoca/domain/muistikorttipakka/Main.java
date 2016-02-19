@@ -9,24 +9,23 @@ package fi.cocacoca.domain.muistikorttipakka;
  *
  * @author cocacoca
  */
+import fi.cocacoca.domain.muistikorttipakka.Muistikorttipakka;
+import fi.cocacoca.domain.muistikorttipakka.Muistikortti;
 import fi.cocacoca.domain.muistikorttipakka.kayttoliittyma.Kayttoliittyma;
+import fi.cocacoca.domain.muistikorttipakka.io.PakkojenKasittelija;
+
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 
 public class Main {
 
     public static void main(String[] args) {
 
-     //   Muistikortti k=new Muistikortti("hei","vaan");
-        // Muistikortti k1=new Muistikortti("a","b");
-        //  Muistikortti k2=new Muistikortti("c","d");
-        //Muistikorttipakka p=new Muistikorttipakka();
-        //  p.lisaaKortti(k2);
-        // p.lisaaKortti(k1);
-        //   p.lisaaKortti(k);
-        //    System.out.println(p.korttienLkm());
-        //  System.out.println(p.poistaKorttiTiedoilla("c","d"));
-        //System.out.println(p.korttienLkm());
-        Kayttoliittyma kliittyma = new Kayttoliittyma();
+        Kayttoliittyma kliittyma;
+
+        kliittyma = new Kayttoliittyma();
         kliittyma.setTitle("Muistikorttisovellus");
 
         kliittyma.setVisible(true);

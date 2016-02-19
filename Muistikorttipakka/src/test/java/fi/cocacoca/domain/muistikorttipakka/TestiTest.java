@@ -5,8 +5,9 @@
  */
 package fi.cocacoca.domain.muistikorttipakka;
 
-import fi.cocacoca.domain.muistikorttipakka.io.PakanTallennus;
+import fi.cocacoca.domain.muistikorttipakka.io.PakkojenKasittelija;
 import java.io.File;
+import java.io.IOException;
 import org.junit.Before;
 
 import org.junit.Test;
@@ -18,18 +19,18 @@ import static org.junit.Assert.*;
  */
 public class TestiTest {
 
-    PakanTallennus pakankasittely;
+    PakkojenKasittelija pakankasittely;
     File tiedosto;
     String kysymys, vastaus;
-    Testi t = new Testi();
+    Testi t;
 
     @Before
-    public void setUp() {
-        pakankasittely = new PakanTallennus();
+    public void setUp() throws IOException {
+        pakankasittely = new PakkojenKasittelija();
         tiedosto = new File("Muistikorttipakka");
         kysymys = "";
         vastaus = "";
-
+        t  = new Testi();
     }
 
     @Test
@@ -41,7 +42,7 @@ public class TestiTest {
 
     @Test
     public void testGetTiedosto() {
-        assertEquals(tiedosto.getAbsolutePath(), t.getTiedosto());
+        assertEquals("Muistikorttipakka", t.getTiedosto().getName());
     }
 
 }

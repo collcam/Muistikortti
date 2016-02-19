@@ -5,7 +5,7 @@
  */
 package fi.cocacoca.domain.muistikorttipakka;
 
-import javax.swing.JTextField;
+
 
 /**
  *
@@ -42,8 +42,6 @@ public class Muistikortti {
         return this.kysymys;
     }
 
-    public String toString() {
-        return kysymys + "," + vastaus;
-    }
+    
 
 }

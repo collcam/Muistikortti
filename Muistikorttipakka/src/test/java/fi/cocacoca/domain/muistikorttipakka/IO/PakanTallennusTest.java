@@ -5,7 +5,7 @@
  */
 package fi.cocacoca.domain.muistikorttipakka.IO;
 
-import fi.cocacoca.domain.muistikorttipakka.io.PakanTallennus;
+import fi.cocacoca.domain.muistikorttipakka.io.PakkojenKasittelija;
 import fi.cocacoca.domain.muistikorttipakka.Muistikortti;
 import fi.cocacoca.domain.muistikorttipakka.Muistikorttipakka;
 
@@ -24,7 +24,7 @@ public class PakanTallennusTest {
 
     File f;
     Scanner lukija;
-    PakanTallennus p;
+    PakkojenKasittelija p;
     Muistikorttipakka pakka;
     Muistikortti k;
     Muistikortti k2;
@@ -33,7 +33,7 @@ public class PakanTallennusTest {
     @Before
     public void setUp() {
         f = new File("Muistikorttipakka");
-        p = new PakanTallennus();
+        p = new PakkojenKasittelija();
         k = new Muistikortti("k", "v");
         pakka = new Muistikorttipakka(k);
         pakka.lisaaKortti(k);
