@@ -13,6 +13,6 @@
 
 [checkstype-raportti] (dokumenttihakemisto/checkstyle.html)
 
-[kortin lisäys sekvenssikaavio] (dokumenttihakemisto/kortinLisaysSekvenssikaavio.jpg)
+[kortin lisäys sekvenssikaavio] ![Alt text] (dokumenttihakemisto/kortinLisaysSekvenssikaavio.jpg)
 
-[kortin poisto sekvenssikaavio] (dokumenttihakemisto/kortinPoistoSekvenssikaavio.jpg)
+[kortin poisto sekvenssikaavio] ![Alt text]  (dokumenttihakemisto/kortinPoistoSekvenssikaavio.jpg)
