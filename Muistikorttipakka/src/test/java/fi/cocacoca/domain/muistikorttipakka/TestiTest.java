@@ -18,19 +18,17 @@ import org.junit.Test;
  */
 public class TestiTest {
 
-    
     Muistikortti m;
-    
 
     @Before
     public void setUp() throws IOException {
-         m=new Muistikortti("hei","hello");
-        
+        m = new Muistikortti("hei", "hello");
+
     }
 
     @Test
     public void testaaToimii() {
-        assertTrue(testaa("hello",m));
+        assertTrue(testaa("hello", m));
     }
 
 }

@@ -6,28 +6,28 @@
 package fi.cocacoca.domain.muistikorttipakka.io;
 
 import fi.cocacoca.domain.muistikorttipakka.Muistikortti;
-import fi.cocacoca.domain.muistikorttipakka.Muistikortti;
-import fi.cocacoca.domain.muistikorttipakka.Main;
-import fi.cocacoca.domain.muistikorttipakka.kayttoliittyma.Kayttoliittyma;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**Luokka tallentaa Muistikorttipakkoja ja hakee tiedostosta ArrayListana pakkoja.
+/**
+ * Luokka tallentaa Muistikorttipakkoja ja hakee tiedostosta ArrayListana
+ * pakkoja.
  *
  * @author cocacoca
  */
 public class PakkojenKasittelija {
-/**
- * Metodi load hakee tiedoston file ja lukee ne muistikorteiksi ArrayListaan.
- * @param file
- * @return
- * @throws FileNotFoundException 
- */
+
+    /**
+     * Metodi load hakee tiedoston file ja lukee ne muistikorteiksi
+     * ArrayListaan.
+     *
+     * @param file tiedosto
+     * @return muistikortit arraylistana
+     * @throws FileNotFoundException poikkeus
+     */
     public static ArrayList<Muistikortti> load(File file) throws FileNotFoundException {
         Scanner lukija = new Scanner(file);
         ArrayList<Muistikortti> a = new ArrayList<Muistikortti>();
@@ -38,18 +38,20 @@ public class PakkojenKasittelija {
         }
         return a;
     }
-/**
- * tallennaPakka tallentaa korttipakan tiedostoon tekstinä.
- * @param korttipakka
- * @param tiedosto
- * @return 
- */
+
+    /**
+     * tallennaPakka tallentaa korttipakan tiedostoon tekstinä.
+     *
+     * @param korttipakka muistikorttipakka
+     * @param tiedosto file
+     * @return totuusarvo onnistuiko pakan tallennus vaiko ei.
+     */
     public static boolean tallennaPakka(ArrayList<Muistikortti> korttipakka, File tiedosto) {
 
         try {
-            BufferedWriter output = new BufferedWriter(new FileWriter(tiedosto));
+            FileWriter output = new FileWriter(tiedosto);
             for (Muistikortti korttipakka1 : korttipakka) {
-                output.write(korttipakka1.getKysymys() + ";" + korttipakka1.getVastaus());
+                output.write(korttipakka1.getKysymys() + ";" + korttipakka1.getVastaus() + "\n");
 
             }
             output.close();

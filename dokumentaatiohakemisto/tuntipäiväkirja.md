@@ -81,3 +81,31 @@ Yritän sinnikkäästi edelleen setviä käyttöliittymän JFileChooserin kanssa
 
 Palautus. 8h
 checkstyle ei toimi koska suppressionissa on jotain vikaa mutten tiedä mitä.
+
+**20.02.2016**
+
+checkstyle korjattu ja se toimii :D yritän veilä saada logiikan toimimaan mutta se on edelleen jostain syystä pielessä eikä käyttöliittymä ole nätti OLLENKAAN! 7h
+
+**22.02.2016**
+
+VIHDOIN heureka. Päätin aika viikatemiestyylisesti poistaa koko käyttöliittymän ja pieni pala kerrallaan kirjoittaa se uudestaan miettien JOKAISTA riviä ja mihin mitäkin mihinkin tarvitaan. Ja nyt logiikka toimii lähes niinkuin sen haluaisin toimivan Vähän on vielä porsaanreikiä mitä en ollut osannut ajatella. 9h
+
+**23.02.2016**
+
+Ohjelma vielä kaatuu parissa tapauksessa mutta tiedän miten ne korjaan. :D 3h
+
+**24.02.2016**
+
+Sekvenssikaavioon lisätty niinkuin arvostelu oli suositellut ja jar tehty.3h
+
+**25.02.2016**
+
+loput dokumentoinnista tehty ja korjattu kaatumiset.4h
+
+**26.02.2016**
+
+palautus tehty 5h
+
+Palautus :)
+
+

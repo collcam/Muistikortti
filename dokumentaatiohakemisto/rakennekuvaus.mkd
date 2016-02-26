@@ -1,0 +1,6 @@
+##Rakennekuvaus##
+
+Luokassa Muistikortti luo uuden kortin ja Muistikorttipakka tallentaa luodut kortit arrayListaan. Muistikorttipakka kutsuu Pakankäsittelijän staattisia metodeita load ja tallennaKorttipakka. Pakankäsittelijän avulla siis joko tallennetaan pakka tai haetaan tiedostosta teksti joka muutetaan korttipakaksi. Testi on riippuvainen Muistikorttien olemassaolosta.
+    Käyttöjärjestelmä käyttää Testi luokan staattista metodia testaa tarkistaakseen oliko käyttöliittymälle annettu vastaus oikein.
+
+    

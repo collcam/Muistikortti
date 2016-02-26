@@ -13,8 +13,6 @@ import java.nio.file.Files;
 /**
  * Luokka suorittaa Muistikorttitestit. Se hakee tiedostosta kysymyksiä ja lukee
  * annettiinko niille tiedoston mukaan oikea vastaus.
- *
- *
  */
 public class Testi {
 
@@ -22,6 +20,10 @@ public class Testi {
      * Metodi hakee tiedostosta joka toisella rivillä olevat kysymykset ja joka
      * toisella rivillä olevat vastaukset ja tarkistaa vastaavatko käyttäjän
      * syötteet tiedostosta löytyviä vastauksia.
+     *
+     * @return totuusarvo oliko vastattu oikein
+     * @param syote käyttäjän syöte sovelluksessa kenttään testiKenttä
+     * @param kortti muistikortti johon vastausta sovelluksessa pyydettiin
      */
     public static boolean testaa(String syote, Muistikortti kortti) {
         return kortti.getVastaus().equalsIgnoreCase(syote);

@@ -5,13 +5,10 @@
  */
 package fi.cocacoca.domain.muistikorttipakka;
 
-import fi.cocacoca.domain.muistikorttipakka.io.PakkojenKasittelija;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +28,7 @@ public class MuistikorttipakkaTest {
         kortti = new Muistikortti("ekaKysymys", "ekaVastaus");
         pakka = new Muistikorttipakka(kortti);
         f = new File("k");
+
     }
 
     @Test
@@ -81,14 +79,25 @@ public class MuistikorttipakkaTest {
     }
 
     @Test
+    public void kortinEtsiminenTiedoillaToimii() {
+        Muistikortti k = new Muistikortti("kysymys", "vastaus");
+        Muistikortti k2 = new Muistikortti("ky", "va");
+        pakka.lisaaKortti(k);
+        assertTrue(pakka.etsiKorttiTiedoilla(k.getKysymys(), k.getVastaus()));
+        assertFalse(pakka.etsiKorttiTiedoilla(k2.getKysymys(), k2.getVastaus()));
+    }
+
+    @Test
     public void pakanHakuOnnistuu() {
-        pakka.tallennaPakka(f);
+        Muistikortti k = new Muistikortti("kysymys", "vastaus");
+        pakka.lisaaKortti(k);
+        pakka.setTiedosto(f);
+        pakka.tallennaPakka();
 
         try {
-            ArrayList<Muistikortti> b = pakka.haeKorttipakka(f);
-            for (int i = 0; i < b.size(); i++) {
-                assertTrue(pakka.poistaKorttiTiedoilla(b.get(i).getKysymys(), b.get(i).getVastaus()));
-            }
+            pakka.haeKorttipakka(f);
+            assertTrue(pakka.poistaKorttiTiedoilla("kysymys", "vastaus"));
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MuistikorttipakkaTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -97,7 +106,8 @@ public class MuistikorttipakkaTest {
 
     @Test
     public void pakanTallennusToimii() {
-        assertTrue(pakka.tallennaPakka(f));
+        pakka.setTiedosto(f);
+        assertTrue(pakka.tallennaPakka());
 
     }
 

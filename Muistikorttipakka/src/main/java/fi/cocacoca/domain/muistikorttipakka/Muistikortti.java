@@ -6,6 +6,7 @@
 package fi.cocacoca.domain.muistikorttipakka;
 
 /**
+ * Muistikorttiluokka luo uuden muistikortin.
  *
  * @author cocacoca
  */
@@ -14,11 +15,21 @@ public class Muistikortti {
     public String kysymys;
     public String vastaus;
 
+    /**
+     * parametitön konstruktori laittaa kentät alustavasti tyhjiksi.
+     */
     public Muistikortti() {
         kysymys = "";
         vastaus = "";
     }
 
+    /**
+     * Parametrillinen konstruktori syöttää kysymyksen ja vastauken valmiina
+     * kortille.
+     *
+     * @param kysymys korttikysymys
+     * @param vastaus korttivastaus
+     */
     public Muistikortti(String kysymys, String vastaus) {
         this.kysymys = kysymys;
         this.vastaus = vastaus;

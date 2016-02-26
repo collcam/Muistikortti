@@ -1,0 +1,39 @@
+#Käyttöohjeet Muistikorttipakan käyttöön#
+
+Hei sinä opinpolulle kääntynyt sielu, joka tarvitset oppityökalun.
+Tervetuloa tutustumaan ja kokeilemaan Muistikorttipakan käyttöön.
+
+**1. Avaa sovellus**
+
+**2.**
+
+     ** a. Jos haluat perustaa uuden pakan:**
+      -  paina "Tee uusi pakka" ja nimeä uusi muistikorttipakkasi muistitiedosto.
+      
+     ** b. Jos haluat valita jo tekemäsi vanhemman pakan:**
+      -  paina "Hae pakka", joka avaa tiedoston hakua varten näkymän.Etsi pakkasi ja                  
+         hyväksy.
+        
+                
+**3. Paina "Muokkaa pakkaa"**
+
+      a. Tässä voit halutessasi lisätä kortteja kirjoittamalla vastauksen ja kysymyksen  
+         kenttiin ja painamalla "Lisää kortti" 
+       
+      b. Voit myös poistaa kortteja kirjoittamalla haluamasi poistettavan kortin           
+         kysymyksen ja vastauksen kenttiin ja painamalla "Poista kortti".  
+         
+**4. Paina "Tallenna pakka".**
+
+      Nyt lisäämäsi tai poistamasi kortit ovat päivittyneet testiä varten pakkaan ja    
+      olet valmis ottamaan testin painamalla "Testaukseen siirtyminen".
+      
+**5.Paina "Testaukseen siirtyminen"**
+
+      Testauksessa ilmestyy sinulle kysymys ruudulle johon sinun tulee kirjoittaa       
+      vastaus ja painaa "Vastaa" näppäintä. Mikäli vastaat oikein kortti ei enää tule     
+      vastaan testissä. Mikäli vastaat väärin tulee kortti jossain vaiheessa uudelleen.          
+      Kun olet vastannut kaikkiin kysymyksiin oikein olet läpäissyt testin.
+     
+      Onnea matkaan :D   
+      
