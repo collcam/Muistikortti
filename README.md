@@ -5,7 +5,7 @@
 
 [aiheen kuvaus](dokumentaatiohakemisto/Kuvaus.md)
 
-[Rakennekuvaus](dokumentaatiohakemisto/Rakennekuvaus.md)
+[Rakennekuvaus](dokumentaatiohakemisto/rakennekuvaus.mkd)
 
 [luokkakaavio](dokumentaatiohakemisto/luokkakaavio.png)
 
