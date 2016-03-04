@@ -3,16 +3,19 @@
 
 ##Dokumentaatio
 
-[aiheen kuvaus](dokumentaatiohakemisto/Kuvaus.md)
+[Aiheen kuvaus](dokumentaatiohakemisto/Kuvaus.md)
+
+[Käyttöohje](dokumentaatiohakemisto/Käyttöohje muistikorttipakalle.mkd)
 
 [Rakennekuvaus](dokumentaatiohakemisto/rakennekuvaus.mkd)
 
-[luokkakaavio](dokumentaatiohakemisto/luokkakaavio.png)
+[Luokkakaavio](dokumentaatiohakemisto/luokkakaavio.png)
 
-[tuntipäiväkirja](dokumentaatiohakemisto/tuntipäiväkirja.md)
+[Tuntipäiväkirja](dokumentaatiohakemisto/tuntipäiväkirja.md)
 
-[pit-testit](dokumentaatiohakemisto/pit-testit/201602261843/index.html)
+[Pit-testit](dokumentaatiohakemisto/pit-testit/201602261843/index.html)
 
+[Testausdokumentti](dokumentaatiohakemisto/Testausdokumentti.mkd)
 
 [checkstype-raportti](dokumenttihakemisto/checkstyle.html)
 

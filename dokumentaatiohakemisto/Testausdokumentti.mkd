@@ -1,0 +1,4 @@
+##Testausdokumentaatio##
+
+Rivitestaus jäi joidenkin rivien osalta tekemättä esimerkiksi luokkien nimet, settereiden ja gettereiden nimet ja arvot yms. Suurin osa tuli kuitenkin testattua paria poikkeusta lukuun ottamatta. En osannut testata tapahtuuko todella Collections.shuffle luokassa Muistikorttipakka. Yritin sitä monesti toteuttaa mutten onnistunut siinä.
+Logiikasta testasin ja paikkasin kolot joissa ohjelma oisi voinut toimia väärin tai kaatua. esim että siirryttäisiin pakan muokkaukseen ennen kuin pakka on valittu tai perustettu.Ohjelma toimii oikein ilman logiikka virheitä.

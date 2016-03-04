@@ -108,4 +108,8 @@ palautus tehty 5h
 
 Palautus :)
 
+**02.03.2016**
+
+Viimeisiä viedään ja projeksti on paria asiaa vaille valmis. 2h
+
 
